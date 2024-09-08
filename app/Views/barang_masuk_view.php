@@ -151,8 +151,8 @@ function rupiah($duit)
                       <td><?= $d['nm_barang']; ?></td>
                       <td><?= $d['nama_supplier']; ?></td>
                       <td><?= rupiah($d['harga_beli']); ?></td>
-                      <td style="text-align: center;"><?= $d['jumlah_masuk']; ?></td>
                       <td><?= $d['ket']; ?></td>
+                      <td style="text-align: center;"><?= $d['jumlah_masuk']; ?></td>
                       <td><?= rupiah($d['jumlah_masuk'] * $d['harga_beli']); ?></td>
                       <td><?= rupiah($d['bayar']); ?></td>
                       <td><?= rupiah($d['jumlah_masuk'] * $d['harga_beli'] - $d['bayar']); ?></td>
