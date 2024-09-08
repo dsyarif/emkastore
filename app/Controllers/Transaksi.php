@@ -92,6 +92,7 @@ class Transaksi extends BaseController
     $stok           =  $this->barang->selectSum('stok')->where('kode_barang', $kode_barang)->first();
     $barang_masuk   = $this->barang_masuk->selectSum('jumlah_masuk')->where('kode_barang', $kode_barang)->first();
     $barang_keluar  = $this->barang_keluar->selectSum('jumlah_keluar')->where('kode_barang', $kode_barang)->first();
+
     $total_stok     = ($barang_masuk['jumlah_masuk'] - $barang_keluar['jumlah_keluar']);
     $jml_keluar     = $this->request->getVar('jumlah_keluar');
     $data = [
@@ -115,6 +116,14 @@ class Transaksi extends BaseController
 
   public function update_barang_keluar()
   {
+    $kode_barang    = $this->request->getVar('kode_barang');
+    $barang_masuk   = $this->barang_masuk->selectSum('jumlah_masuk')->where('kode_barang', $kode_barang)->first();
+    $barang_keluar  = $this->barang_keluar->selectSum('jumlah_keluar')->where('kode_barang', $kode_barang)->first();
+    $barang_keluar_id  = $this->barang_keluar->where('id_barang_keluar', $this->request->getVar('id_barang_keluar'))->first();
+
+    $total_stok     = (($barang_masuk['jumlah_masuk']  - $barang_keluar['jumlah_keluar']) + $barang_keluar_id['jumlah_keluar']);
+    // dd($total_stok);
+    $jml_keluar     = $this->request->getVar('jumlah_keluar');
     $data = [
       'id_barang_keluar' => $this->request->getVar('id_barang_keluar'),
       'kode_barang'     => $this->request->getVar('kode_barang'),
@@ -124,8 +133,16 @@ class Transaksi extends BaseController
       'alasan'          => $this->request->getVar('alasan'),
       'pajak'          => $this->request->getVar('pajak'),
     ];
-    $this->barang_keluar->save($data);
-    session()->setFlashdata('success', 'Data Berhasil Diubah');
+
+    if ($total_stok < $jml_keluar) {
+      session()->setFlashdata('danger', 'Data Gagal Disimpan, karena melebih stok yang ada');
+    } else {
+      $this->barang_keluar->save($data);
+      session()->setFlashdata('success', 'Data Berhasil Disimpan');
+    }
+
+    // $this->barang_keluar->save($data);
+    // session()->setFlashdata('success', 'Data Berhasil Diubah');
 
     return redirect()->to('barang-keluar');
   }

@@ -33,7 +33,7 @@ function rupiah($duit)
               <tr>
                 <th style="width: 5%;">No</th>
                 <th>Barang</th>
-                <!-- <th>Stok</th> -->
+                <th>Stok</th>
                 <th>Harga Beli</th>
                 <th>Harga Jual</th>
                 <th>Kategori</th>
@@ -46,7 +46,7 @@ function rupiah($duit)
               <tr>
                 <th style="width: 5%;">No</th>
                 <th>Barang</th>
-                <!-- <th>Stok</th> -->
+                <th>Stok</th>
                 <th>Harga Beli</th>
                 <th>Harga Jual</th>
                 <th>Kategori</th>
@@ -78,13 +78,13 @@ function rupiah($duit)
                   $jml_stok_keluar = 0;
                 }
 
-                // $stok = ($k['stok'] + $jml_stok_masuk) - $jml_stok_keluar;
+                $stok = ($k['stok'] + $jml_stok_masuk) - $jml_stok_keluar;
                 $stok = ($jml_stok_masuk) - $jml_stok_keluar;
                 ?>
                 <tr>
                   <td><?= $no++; ?></td>
                   <td><?= $k['nm_barang']; ?></td>
-                  <!-- <td><?= $stok; ?></td> -->
+                  <td><?= $stok; ?></td>
                   <td><?= rupiah($k['harga_beli']); ?></td>
                   <td><?= rupiah($k['harga_jual']); ?></td>
                   <td><?= $k['kategori']; ?></td>
