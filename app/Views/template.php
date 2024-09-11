@@ -11,7 +11,7 @@ $uri = current_url(true);
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="<?= base_url() ?>/assets/img/logo/logo4.png" rel="icon">
-  <title>Emka Store - <?= $title; ?></title>
+  <title>ZNFL OFFICIALSHOP - <?= $title; ?></title>
   <link href="<?= base_url() ?>/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url() ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url() ?>/assets/css/ruang-admin.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@ $uri = current_url(true);
         <div class="sidebar-brand-icon">
           <img src="<?= base_url() ?>/assets/img/logo/logo4.png">
         </div>
-        <div class="sidebar-brand-text mx-3">Emka Store</div>
+        <div class="sidebar-brand-text mx-3">ZNFL OFFICIALSHOP</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' || $uri->getSegment(1) == '') ? 'active' : ''; ?>">
@@ -164,7 +164,7 @@ $uri = current_url(true);
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script>
                 document.write(new Date().getFullYear());
-              </script> - Emka Store
+              </script> - ZNFL OFFICIALSHOP
             </span>
           </div>
         </div>

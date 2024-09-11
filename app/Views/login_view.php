@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <!-- <link href="<?= base_url() ?>assets/img/logo/logo.png" rel="icon"> -->
   <link href="<?= base_url() ?>/assets/img/logo/logo4.png" rel="icon">
-  <title>Emkastore - Login</title>
+  <title>ZNFL OFFICIALSHOP - Login</title>
   <link href="<?= base_url() ?>assets/<?= base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url() ?>assets/css/ruang-admin.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
                 <div class="login-form">
                   <div class="text-center">
                     <img src="<?= base_url() ?>/assets/img/logo/logo4.png" alt="Logo" width="15%">
-                    <h1 class="h4 text-gray-900 mb-4 mt-2">Login <strong>Emka Store</strong> </h1>
+                    <h1 class="h4 text-gray-900 mb-4 mt-2">LOGIN <br><strong>ZNFL OFFICIALSHOP</strong> </h1>
                   </div>
                   <form action="<?= base_url() ?>login/ceklogin" method="POST">
                     <div class="form-group">
